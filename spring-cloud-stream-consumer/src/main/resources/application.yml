@@ -2,12 +2,20 @@ spring:
   cloud:
     stream:
       bindings:
-        input:
+        inputChannel:
           destination: book-stream
           group: book-stream-queue
+          consumer:
+           concurrency: 3
+        otpInputChannel:
+          destination: otp-book-stream
+          group: otp-stream-queue
+          consumer:
+           concurrency: 1           
+
 
   rabbitmq:
-    host: localhost
+    host: 192.168.0.141
     port: 5672
     username: guest
     password: guest

@@ -6,7 +6,7 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Source;
 
 @SpringBootApplication
-@EnableBinding(Source.class)
+@EnableBinding({OutputBinding.class,OtpBinding.class})
 public class SpringCloudStreamRabbitApplication {
 
     public static void main(String[] args) {
