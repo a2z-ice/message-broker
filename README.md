@@ -8,4 +8,7 @@ docker exec some-rabbit rabbitmq-plugins enable rabbitmq_management
 
 while true; do curl --location --request POST 'http://localhost:8080/publish' --header 'Content-Type: application/json' --data '{"id":123,"name":"zzzzzzzzzzzzzzzzzz"}';sleep 1; done
 
+# curl with index value in while
+i=0;while true; do curl --location --request POST 'http://localhost:8080/writer' --header 'Content-Type: application/json' --data '{"id":123,"name":"zzzzzzzzzzzzzzzzzz'$i'"}';echo $i;i=$[$i+1];sleep 1; done
+
 </pre></code>
